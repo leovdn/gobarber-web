@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiClock, FiPower } from 'react-icons/fi';
 import {
@@ -9,6 +9,8 @@ import {
   Content,
   Schedule,
   NextAppointment,
+  Section,
+  Appointment,
   Calendar,
 } from './styles';
 
@@ -16,6 +18,8 @@ import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const { signOut, user } = useAuth();
 
   return (
@@ -62,6 +66,78 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/21160525?s=460&u=25b91b8274b362edff695a70e486d9ea26d8e142&v=4"
+                  alt="Leonardo Vitor Dantas"
+                  srcSet=""
+                />
+                <strong>Leonardo Vitor</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                10:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/21160525?s=460&u=25b91b8274b362edff695a70e486d9ea26d8e142&v=4"
+                  alt="Leonardo Vitor Dantas"
+                  srcSet=""
+                />
+                <strong>Leonardo Vitor</strong>
+              </div>
+            </Appointment>
+          </Section>
+
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                14:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/21160525?s=460&u=25b91b8274b362edff695a70e486d9ea26d8e142&v=4"
+                  alt="Leonardo Vitor Dantas"
+                  srcSet=""
+                />
+                <strong>Leonardo Vitor</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                16:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/21160525?s=460&u=25b91b8274b362edff695a70e486d9ea26d8e142&v=4"
+                  alt="Leonardo Vitor Dantas"
+                  srcSet=""
+                />
+                <strong>Leonardo Vitor</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
